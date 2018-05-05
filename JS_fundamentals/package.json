@@ -1,0 +1,17 @@
+{
+  "name": "js_loops",
+  "version": "1.0.0",
+  "description": "ejemplos de codigo",
+  "main": "loops.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass sass/estilos.scss   css/estilos.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "author": "JJQP",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.17.3"
+  }
+}

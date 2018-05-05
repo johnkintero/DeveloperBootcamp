@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <title>Bootstrap Grid System</title>
+    <style>
+      .blue{
+        background: blue;
+        border: 1px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Dentro del sistema de grid de bootstrap cada row divide la pantalla en 12 unidades </p>
+      <p>Se pueden distribuir esas 12 columnas como uno quiera</p>
+      <div class="row">
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-1 blue">COL LG 1</div>
+        <div class="col-lg-6 blue">COL LG 6</div>
+        <div class="col-lg-6 blue">COL LG 6</div>
+      </div> <!-- row -->
+      <span>Si se las columnas son mas de 12 se pasar automaticamente debajo, pero si son menos de 12 las ajustara a la izquierda y dejara el espacio</span>
+      <div class="row">
+        <div class="col-lg-2 blue">COL LG 2</div>
+        <div class="col-lg-2 blue">COL LG 2</div>
+        <div class="col-lg-2 blue">COL LG 2</div>
+        <div class="col-lg-2 blue">COL LG 2</div>
+        <div class="col-lg-5 blue">COL LG 5</div>
+        <div class="col-lg-5 blue">COL LG 5</div>
+        <div class="col-lg-5 blue">COL LG 5</div>
+        <div class="col-lg-5 blue">COL LG 5</div>
+      </div> <!-- row -->
+      <p> se puede controlar el tamaño mientras la pantalla es mas pequeña
+      cuando la pantalla llega a md queda dividia en 6 columnas de  2 de ancho, cuando llega al tamaño sm son 4 columnas de 3 de ancho
+    y lo que sobra se coloca abajo</p>
+
+      <div class="row">
+        <div class="col-md-2 col-sm-3 blue">COL MD 2</div>
+        <div class="col-md-2 col-sm-3 blue">COL MD 2</div>
+        <div class="col-md-2 col-sm-3 blue">COL MD 2</div>
+        <div class="col-md-2 col-sm-3 blue">COL MD 2</div>
+        <div class="col-md-2 col-sm-3 blue">COL MD 2</div>
+        <div class="col-md-2 col-sm-3 blue">COL MD 2</div>
+      </div> <!-- row -->
+      <p> cuando la pantalla llega a sm queda dividia en 6 columnas de  2 de ancho, cuando llega al tamaño sm son 4 columnas de 3 de ancho
+    y lo que sobra se coloca abajo, cuando es xm la divide en 3 columnas de 4 de ancho</p>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-6 blue">COL MD 2</div>
+        <div class="col-sm-3 col-xs-6 blue">COL MD 2</div>
+        <div class="col-sm-3 col-xs-6 blue">COL MD 2</div>
+        <div class="col-sm-3 col-xs-6 blue">COL MD 2</div>
+        <div class="col-sm-3 col-xs-6 blue">COL MD 2</div>
+        <div class="col-sm-3 col-xs-6 blue">COL MD 2</div>
+      </div> <!-- row -->
+    </div> <!-- container -->
+  </body>
+</html>

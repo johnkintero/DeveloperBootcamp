@@ -1,0 +1,15 @@
+pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+  width: 50%;
+  height: auto;
+  overflow: auto;
+}
+
+h1 {
+  color: blue;
+}
+
+/*# sourceMappingURL=css/estilos.css.map */

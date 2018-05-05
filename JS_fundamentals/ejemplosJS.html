@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/estilos.css
+    ">
+    <title>Curso developer Bootcamp</title>
+</head>
+<body>
+    <div>
+        <h1>EJEMPLO DE LOOPS CON JS</h1>
+        <div>
+            <p>
+                ejemplo de loop
+            </p>
+            <pre>
+                <code>
+                var count = 1;
+                while(count < 6){
+                    divloopswhile.innerHTML =  divloopswhile.innerHTML + "<br> cuenta: "+ count;
+                    count++;
+                }
+                </code>
+            </pre>
+            <p>El resultado es: </p>
+            <div id="loopwhile"></div>
+        </div>
+        <hr>
+        <div>
+            <p>
+                ejemplo utilizando un string  "Recordar que si se va a trabajar con arreglos el indice empieza en 0"
+            </p>
+            <pre>
+                <code>
+                        var str = "John"
+                        var conunt1 = 0;
+                        while(count < str.length){
+                            divloopswhile.innerHTML =  divloopswhile.innerHTML + "<br>" +str[count1];
+                            count1++;
+                        }
+                </code>
+            </pre>
+            <p>resultado: </p>
+            <div id="loopWhileString"></div>
+        </div>
+    </div>
+    <div>
+        <h1>EJEMPLO DE ARRAYS</h1>
+        <div>
+            <h2>Methods</h2>
+            <ul>
+                <li>push/pop
+                    <p>
+                        <em>Push</em> sirve para adicional al <strong> final </strong> del arreglo un nuevo dato. <pre><code>nameArray.push("valor"); </code></pre> 
+                    </p>
+                    <p>
+                        <em>Pop</em> sirve para quitar el <strong>ultimo</strong> dato del arreglo. <pre><code>nameArray.pop();</code></pre> 
+                        al asignar el metodo a una variable se obtiene el valor retirado
+                    </p>
+                </li>
+                <li>shift/unshift
+                    <p>
+                        <em>Unshift</em> sirve para adicional al <strong>inicio</strong> del arreglo un nuevo dato. <pre><code>nameArray.unshift("valor"); </code></pre> 
+                    </p>
+                    <p>
+                        <em>Shift</em> sirve para quitar el <strong>primer</strong> dato del arreglo. <pre><code>nameArray.shift(); </code></pre> 
+                        al asignar el metodo a una variable se obtiene el valor retirado
+                    </p>
+                </li>
+                <li>indexOf
+                    <p>
+                        <em>indexOf</em> sirve para buscar el indice de un item en un arreglo.
+                        <pre><code>var amigos = ["Carlos","Cristian","Ana","Jenny","Cristian"]; 
+amigos.indexOf("Ana");//2 
+amigos.indexOf("Cristian")//1, no 4 por que es el que encuentre primero 
+
+//Si el item no existe retorna -1
+                        </code></pre> 
+                    </p>
+                </li>
+                <li>slice
+                    <p>
+                        <em>Slice</em> Sirve para copiar partes de un arreglo o el arreglo completo si se necesita.
+                    </p>
+                        <pre>
+                            <code>var frutas =["limon","pera","manzana","ceraza","fresa","banano"]; 
+var rojas = frutas.slice(2,5)// se especifica donde comienza y termina en el item siguiente al ultimo.
+//rojas contiene ["manzana","ceraza","fresa"]
+                            </code>
+                        </pre>
+                </li>
+                <li>FOREACH
+                        <p>
+                            <em>foreach</em> Sirve para recorrer el contenido de los arreglos de una manera facil.
+                        </p>
+                            <pre>
+                                <code>var frutas =["limon","pera","manzana","ceraza","fresa","banano"]; 
+frutas.forEach(function(fruta){// fruta es el placeholder se puede colocar cualquier nombre pero es donde se guardara el contenido.
+console.log(fruta);
+    })
+                                </code>
+                            </pre>
+                        <p>
+                            foreach puede tener 2  o 3 parametros, el 1 representa el contenido y el segundo representa el indice
+                        </p>  
+                        <pre>
+                        <code>var frutas =["limon","pera","manzana","cereza","fresa","banano"]; 
+frutas.forEach(function(fruta,i){// fruta es el placeholder se puede colocar cualquier nombre pero es donde se guardara el contenido.
+console.log(i + ": "fruta);
+    })
+                                </code>
+                            </pre> 
+                            <p>resultado: 
+                                0 : limon
+                                1 : pera
+                                2 : manzana
+                                3 : cereza
+                                4 : fresa
+                                5 : banano
+                            </p>
+                    </li>
+                    <li>Reverse
+                        <p>
+                            Ordena el arreglo al reves ej: [1,2,3,4,5] lo vuelve [5,4,3,2,1]
+                        </p>
+                        <pre>
+                            <code>var num = [1,2,3,4,5];
+                                num.reverse();
+                                //ahora se recorre y se imprime
+                                num.forEach(function(numero){
+                                    console.log(numero);
+                                    });
+                            </code>
+                        </pre>
+                        <p>Resultado: 5 4 3 2 1</p>
+                    </li>
+            </ul>
+              
+        </div>
+    </div>
+    <script src="loops.js"></script>
+</body>
+</html>

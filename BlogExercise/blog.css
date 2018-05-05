@@ -1,0 +1,25 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+div{
+    margin: auto;
+    width: 70%;
+    background-color: rgb(239, 248, 245);
+    border: 20px solid gray;
+    padding: 20px;
+}
+h3{
+    text-transform: uppercase;
+    font-stretch: semi-condensed;
+    font-size: 15px;
+    color: #3498db;
+    letter-spacing: 0.2rem;
+    
+}
+hr{
+    border-top: 1px solid #dfdbdb;
+}
+.pinicial{
+    border-left: 4px solid gray;
+    padding-left: 3px;
+}

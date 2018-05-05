@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h1>Register</h1>
+<form action="">
+    <label for="firtsName">Firts Name</label>
+    <input type="text" name="" id="firstName" placeholder="john" required>
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" placeholder="Smith"required>
+    <br>
+    <label for="gMale">Male</label>
+    <input type="radio" name="genero" id="gMale" value="male">
+    <label for="gFemale">Famale</label>
+    <input type="radio" name="genero" id="gFemale" value="famale">
+    <label for="gOther">Other</label>
+    <input type="radio" name="genero" id="gOther" value="other">
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <label for="pass">Password:</label>
+    <input type="password" id="pass" pattern=".{5,10}" required title="Password must be between 5 and 10">
+    <br>
+    <label for="birth">Birthday
+    <select>
+        <option value="Mounth"></option>
+    </select>
+    <select>
+            <option value="1"></option>
+        </select>
+        <select >
+                <option value="2018"></option>
+            </select>
+        </label>
+            <br>
+    <label for="conditions">I agree to the terms and conditions</label>
+<input type="checkbox" name="conditions">
+<br>
+<button>Submit</button>
+</form>   
+</body>
+</html>
