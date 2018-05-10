@@ -1,0 +1,8 @@
+<% include partials/header %>
+
+<h1>ESTO ES UN EJEMPLO DE LOOP CON TEMPLATES</h1>
+
+<% posts.forEach(function (post){ %>
+<li><%= post.titulo %> - <strong><%= post.autor%></strong></li>
+<% }); %>
+<% include partials/footer %>

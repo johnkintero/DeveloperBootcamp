@@ -1,0 +1,9 @@
+<h1>I found movie!!!</h1>
+
+<% var peliculas = respData["Search"]; %>
+<% console.log(peliculas);%>
+<% peliculas.forEach(function(movie){ %>
+    <h2><%= movie.Title%></h2>
+    <img src=<%= movie.Poster%> />
+    <p><%= movie.Year%></p>
+<% }); %>

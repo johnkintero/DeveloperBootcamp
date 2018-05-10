@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="circulos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.10/howler.js"></script>
+    <script src="paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+        var keyData = {
+            q: {
+                color: 'purple',
+                sound: new Howl({
+                    src: ['sounds/bubbles.mp3']
+                  })
+            },
+            w: {
+                color: 'white',
+                sound: new Howl({
+                    src: ['sounds/clay.mp3']
+                  })
+            },
+            e: {
+                color: 'yelow',
+                sound: new Howl({
+                    src: ['sounds/confetti.mp3']
+                  })
+            },
+            r: {
+                color: 'orange',
+                sound: new Howl({
+                    src: ['sounds/corona.mp3']
+                  })
+            },
+            t: {
+                color: 'red',
+                sound: new Howl({
+                    src: ['sounds/flash-1.mp3']
+                  })
+            },
+            y: {
+                color: 'blue',
+                sound: new Howl({
+                    src: ['sounds/moon.mp3']
+                  })
+            }
+        }
+        var circles = [];
+        function onKeyDown(event){
+            if(keyData[event.key]){
+                //funcion de paper que permite identificar automaticamente el tamaño de la pantalla
+                //incluso si se redimensiona.
+                var maxPoint = new Point(view.size.width, view.size.height);
+                var randomPoint = Point.random();
+                var point = maxPoint * randomPoint;
+                var newCircle = new Path.Circle(point,200);
+                newCircle.fillColor = keyData[event.key].color;   
+                keyData[event.key].sound.play();
+                circles.push(newCircle); 
+            }
+        }
+       
+        function onFrame(event){
+            for(var i = 0;i < circles.length; i++){
+                circles[i].fillColor.hue += 1;
+                circles[i].scale(.9);
+            }
+        } 
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" resize></canvas>
+</body>
+</html>
