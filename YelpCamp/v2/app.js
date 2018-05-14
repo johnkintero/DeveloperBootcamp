@@ -57,8 +57,13 @@ app.get('/campgrounds/new', function (req, res) {
 //SHOW Muestra la informacion de un campground especifico
 app.get('/campgrounds/:id', function (req, res) {
     //Busca el campground con el id entregado
-    //Campground.find
-    res.send('Vamos bien')
+    Campground.findById(req.params.id, function (err, foundCampground) {
+        if(err){
+            console.log(err);
+        }else{
+            res.render('show', {campground: foundCampground});
+        }
+    });
 });
 
 //CREATE Agrega un nuevo campground a la BD.
@@ -66,8 +71,9 @@ app.post('/campgrounds', function (req, res) {
     console.log(req.body);
     var nameCamp = req.body.name;
     var imgCamp = req.body.imgurl; 
+    var descCamp = req.body.description;
     //crea el objeto ien la bd
-    var newCampgroud = {name: nameCamp, image: imgCamp};
+    var newCampgroud = {name: nameCamp, image: imgCamp, description: descCamp};
     Campground.create(newCampgroud, function (err, newlycreate){
         if(err){
             console.log(err);
