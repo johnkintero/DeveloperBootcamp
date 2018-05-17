@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/blog.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>RESTfulBlogApp</title>
+  <style>
+  * {
+  box-sizing: border-box;
+}
+.navbar {
+    display: flex;
+    background-color: #333;
+    color: white;
+}
+/* Style the navigation bar links */
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.navbar .material-icons{
+    padding: 8px;
+    font-size: 30px;
+}
+/* Column container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid green;
+}
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.main {
+    flex: 60%;
+    background-color: white;
+    padding: 20px;
+}
+/* Main column */
+.side {
+    flex: 40%;
+    background-color: #aaa;
+}
+.btn{
+    text-decoration: none;
+    text-align: center;
+    border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 10px 28px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+}
+.success {
+    background-color: #4CAF50;
+} /* Green */
+.imgsize{
+    width: 100%;
+    height: 200px;
+}
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+  .contain{
+
+  }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <i class="material-icons">code</i>
+    <a href="/blog">Inicio</a>
+    <a href="/blog/New">New Blog</a>
+  </nav>
+
+<div class="contain">
+  <div class="row">
+    <div class="main">
+      <div class="box-title">
+        <p>fghfhgfh</p>
+        <span>Mon May 14 2018</span>
+      </div>
+      <div class="box-body">
+        <p>jhfhfjhhjfjhfjh</p>
+        <cite>Autor: johnq</cite>
+      </div>
+      <p><a class="btn success" href="/blog/5afa03bd268a8b3711517093">Detail</a></p>
+    </div>
+    <div class="side">
+      <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
+      <img class="imgsize" src="https://images.pexels.com/photos/239898/pexels-photo-239898.jpeg?cs=srgb&amp;dl=close-up-code-coding-239898.jpg&amp;fm=jpg" alt="">
+    </div>
+
+    <div class="main">
+      <div class="box-title">
+        <p>Tercer blogs</p>
+        <span>Wed May 16 2018</span>
+      </div>
+      <div class="box-body">
+        <p>Iaculis fermentum ligula parturient hendrerit porta conubia arcu interdum mollis, suscipit magna purus porttitor scelerisque laoreet turpis ultricies sem, aliquam sociis condimentum dignissim morbi curae mattis cras. Faucibus ultricies mattis
+          etiam mus ultrices erat tristique rhoncus, et rutrum dis urna euismod sollicitudin maecenas quam ligula, curabitur habitasse platea torquent nisl accumsan massa. Commodo semper a molestie sed tortor lacinia nascetur volutpat urna, facilisi mauris
+          ridiculus eget egestas arcu auctor mattis, est etiam parturient sociis quam platea vulputate nullam.</p>
+        <cite>Autor: johnq</cite>
+      </div>
+      <p><a class="btn success" href="/blog/5afcd36bc4d842511d05f86c">Detail</a></p>
+    </div>
+    <div class="side">
+      <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
+      <img class="imgsize" src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?cs=srgb&amp;dl=blur-close-up-code-546819.jpg&amp;fm=jpg" alt="">
+    </div>
+  </div>
+</div>
+  <div class="footer">
+    <h2 style="text-align: center">TrendMark 2018</h2>
+  </div>
+</body>
+
+</html>

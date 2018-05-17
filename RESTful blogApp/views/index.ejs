@@ -1,0 +1,21 @@
+<% include partials/header %>
+<div class="row">
+    <% blogs.forEach(function(blog){ %>
+    <div class="main" style="width: 100%;">
+        <div class="box-title">
+            <p><%= blog.title %></p>
+            <span><%= blog.date.toDateString() %></span>
+        </div>
+        <div class="box-body">
+            <p><%= blog.enter %></p>
+            <cite>Autor: <%= blog.autor %></cite>
+        </div>
+        <p><a class="btn success" href="/blog/<%= blog._id%>">Detail</a></p>
+    </div>
+    <div class="side">
+        <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
+        <img class="imgsize" src="<%= blog.image %>" alt="">
+    </div>
+    <% }); %>
+</div>
+<% include partials/footer %>

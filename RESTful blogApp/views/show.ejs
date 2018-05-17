@@ -1,0 +1,23 @@
+<% include partials/header %>
+<h1>View Blog</h1>
+<div>
+        <label for="txtTitle">Title :
+            <input type="text" name="txtTitle" value="<%= blog.title %>">
+        </label>
+        <label for="txtImage">Image :
+            <img src="<%= blog.image%>" alt="" style="width: 200px; height: 200px">
+        </label>
+        <label for="txtEntrada">Entrada :
+            <input type="text" name="txtEntrada" value="<%= blog.enter%>">
+        </label>
+        <label for="txtAutor">Entrada :
+            <input type="text" name="txtAutor" value="<%= blog.autor%>">
+        </label>
+        <a href="/blog/<%= blog._id %>/edit">Edit</a>
+        <form action="/blog/<%= blog._id %>?_method=DELETE" method="POST">
+            <button>DELETE</button>
+        </form>
+      
+        <button>Delete!!</button>
+</div>
+<% include partials/footer %>

@@ -1,0 +1,20 @@
+<% include partials/header %>
+<h1>New Blog</h1>
+<div>
+    <form action="/blog" method="POST">
+        <label for="txtTitle">Title :
+            <input type="text" name="txtTitle">
+        </label>
+        <label for="txtImage">Image :
+            <input type="text" name="txtImage">
+        </label>
+        <label for="txtEntrada">Entrada :
+            <input type="text" name="txtEnter">
+        </label>
+        <label for="txtAutor">Entrada :
+            <input type="text" name="txtAutor">
+        </label>
+        <button>Submit!!!</button>
+    </form>
+</div>
+<% include partials/footer %>
