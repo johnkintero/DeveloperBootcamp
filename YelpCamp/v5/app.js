@@ -26,11 +26,7 @@ MONGOOSE.connect('mongodb://localhost/yelp_campv5', function (err){
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
-//middleware para validar el usuario
-app.use(function (req, res, next) {
-    res.locals.currentUser = req.user;
-    next();
-});
+
 //PASSPORT CONFIGURATION
 app.use(require('express-session')({
     secret: 'Hulk es el mejor perro del mundo',
@@ -42,6 +38,13 @@ app.use(PASSPORT.session());
 PASSPORT.use(new LOCALSTRATEGY(User.authenticate()));
 PASSPORT.serializeUser(User.serializeUser());
 PASSPORT.deserializeUser(User.deserializeUser());
+//middleware para validar el usuario tiene que ir despues de la configuracion del Passport
+//si no no funciona.
+app.use(function (req, res, next) {
+    res.locals.currentUser = req.user;
+    console.log("es: " + req.user);
+    next();
+});
 /*-------------------------------------------------------------------------------------*/
 SEEDS();
 /***************************************************************************************/
@@ -53,8 +56,7 @@ app.get('/', function (req, res) {
 });
 
 //INDEX muestra todos los campgrounds
-app.get('/campgrounds', function (req, res) {
-console.log(req.user);
+app.get('/campgrounds', isLoggedIn, function (req, res) {
     //Obtiene la informacion de la BD
     Campground.find({}, function(err, allcampgrounds){
         if(err){
@@ -72,7 +74,6 @@ app.get('/campgrounds/new', isLoggedIn, function (req, res) {
 
 //SHOW Muestra la informacion de un campground especifico
 app.get('/campgrounds/:id', function (req, res) {
-    console.log(req.user);
     //Busca el campground con el id entregado y trae la informacion referencia a los 
     //comentarios
     Campground.findById(req.params.id).populate('comments').exec(function (err, foundCampground) {
@@ -170,7 +171,7 @@ app.get('/login', function (req, res) {
 
 app.post('/login', PASSPORT.authenticate('local', {
     successRedirect : '/campgrounds',
-    failureRedirect : '/register', 
+    failureRedirect : '/register'
 }), function (req, res) {});
 
 app.get('/logout', function (req, res) {
@@ -179,7 +180,7 @@ app.get('/logout', function (req, res) {
 });
 
 function isLoggedIn (req, res, next) {
-    if(req.isAuthenticated()){
+    if(req.isAuthenticated()){        
         return next();
     }
     res.redirect('/login');
